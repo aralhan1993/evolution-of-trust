@@ -15,8 +15,8 @@ public class GameTest {
     PrintStream stream;
     @BeforeEach
     void itShouldInitializeGameInstance() {
-        Player player1 = new Player(new Scanner("CHEAT"));
-        Player player2 = new Player(new Scanner("CHEAT"));
+        Player player1 = new Player(Behavior.cheat());
+        Player player2 = new Player(Behavior.cheat());
 
         //PrintStream stream = Mockito.mock(PrintStream.class);
         game = new Game(player1, player2, 1, new Machine(), stream);
@@ -25,9 +25,8 @@ public class GameTest {
 
     @Test
     void itShouldStartTheGame() {
-        Player player1 = new Player(new Scanner("CHEAT"));
-        Player player2 = new Player(new Scanner("CHEAT"));
-
+        Player player1 = new Player(Behavior.cheat());
+        Player player2 = new Player(Behavior.cheat());
 
         PrintStream stream = Mockito.mock(PrintStream.class);
 
@@ -40,8 +39,8 @@ public class GameTest {
 
     @Test
     public void itShouldRunForFiveRounds(){
-        Player player1 = new Player(new Scanner("COOPERATE\nCOOPERATE\nCOOPERATE\nCOOPERATE\nCOOPERATE"));
-        Player player2 = new Player(new Scanner("CHEAT\nCHEAT\nCHEAT\nCHEAT\nCHEAT"));
+        Player player1 = new Player(Behavior.normal(new Scanner("COOPERATE\nCOOPERATE\nCOOPERATE\nCOOPERATE\nCOOPERATE")));
+        Player player2 = new Player(Behavior.cheat());
 
         PrintStream stream = Mockito.mock(PrintStream.class);
 

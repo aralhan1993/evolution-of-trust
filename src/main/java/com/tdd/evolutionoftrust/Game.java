@@ -27,7 +27,8 @@ public class Game {
             int scores[] = machine.calculateScore(player1.makeMove(), player2.makeMove());
             player1Score += scores[0];
             player2Score += scores[1];
+            printStream.println("player1 : " + player1Score + " player2 : " + player2Score);
+            i++;
         }
-        printStream.println("player1 : " + player1Score + " player2 : " + player2Score);
     }
 }

@@ -13,7 +13,7 @@ public class PlayerTest {
     @BeforeEach
     void setup(){
         Scanner scanner = new Scanner("CHEAT");
-        player = new Player(scanner);
+        player = new Player(Behavior.normal(scanner));
     }
 
     @Test

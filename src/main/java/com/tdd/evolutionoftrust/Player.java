@@ -4,13 +4,13 @@ import java.util.Scanner;
 
 public class Player {
 
-    private Scanner reader;
+    private Behavior behavior;
 
-    public Player(Scanner scanner) {
-        this.reader = scanner;
+    public Player(Behavior behavior) {
+        this.behavior = behavior;
     }
 
     public Move makeMove() {
-        return Move.valueOf(reader.nextLine());
+        return behavior.makeMove();
     }
 }
