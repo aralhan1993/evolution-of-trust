@@ -14,6 +14,10 @@ public interface Behavior {
         return new Cheater();
     }
 
+    static Behavior cooperate() {
+        return new Cooperator();
+    }
+
 }
 
 class Normal implements Behavior {
@@ -34,5 +38,12 @@ class Cheater implements Behavior {
 
     public Move makeMove() {
         return Move.CHEAT;
+    }
+}
+
+class Cooperator implements Behavior {
+
+    public Move makeMove() {
+        return Move.COOPERATE;
     }
 }
